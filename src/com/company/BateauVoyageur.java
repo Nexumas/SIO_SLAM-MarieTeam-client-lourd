@@ -1,4 +1,6 @@
 package com.company;
 
-public class BateauVoyageur {
+public class BateauVoyageur extends Bateau {
+
+
 }
