@@ -2,17 +2,25 @@ package com.company;
 
 public class Bateau {
 
-    private int idBat;
-    private String nomBat;
-    private float longueurBat;
-    private float largeurBat;
+    protected int idBat;
+    protected String nomBat;
+    protected float longueurBat;
+    protected float largeurBat;
 
-    public Bateau(){
-
+    public Bateau(int id, String nom, float longueur, float largeur){
+        this.largeurBat = largeur;
+        this.longueurBat = longueur;
+        this.nomBat = nom;
+        this.idBat = id;
     }
 
     public String toString(){
-        return
+        String sBat = "";
+        sBat += "Nom du bateau : "+this.nomBat+"\n";
+        sBat += "Longueur : "+this.longueurBat+"\n";
+        sBat += "Largeur : "+this.largeurBat+"\n";
+
+        return sBat;
     }
 
 }
