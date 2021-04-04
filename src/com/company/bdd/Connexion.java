@@ -9,7 +9,7 @@ public class Connexion {
     public Connexion(){
 
         /* Connexion à la base de données */
-        String url = "jdbc:mysql://localhost:3306/bdd_sdzee";
+        String url = "jdbc:mysql://localhost:3306/marieteam";
         String utilisateur = "root";
         String motDePasse = "";
         Connection connexion = null;

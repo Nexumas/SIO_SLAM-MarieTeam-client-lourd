@@ -24,7 +24,6 @@ public class Fenetre extends JFrame implements ActionListener {
         JRadioButton creer = new JRadioButton("creer");
         this.add(creer);
 
-
         JRadioButton modifier = new JRadioButton("modifier");
         this.add(modifier);
     }
