@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 public class Fenetre extends JFrame implements ActionListener {
 
+    private Boolean creerIsShown;
+    private Boolean modifierIsShown;
     //lance l'affichage de la fenêtre et des composants graphiques
     Fenetre(){
         this.setLayout(new FlowLayout());
@@ -17,6 +19,15 @@ public class Fenetre extends JFrame implements ActionListener {
         this.setVisible(true);
         this.setSize(800,600);
         this.setTitle("MarieTeam");
+        this.creerIsShown = false;
+        this.modifierIsShown = false;
+    }
+
+    private void texts(){
+        TextField chemin = new TextField();
+        TextField recherche = new TextField();
+        TextField resultat = new TextField();
+        TextField listeBatPDF = new TextField();
     }
 
     //initialisation des radioboutons
@@ -26,9 +37,25 @@ public class Fenetre extends JFrame implements ActionListener {
 
         JRadioButton modifier = new JRadioButton("modifier");
         this.add(modifier);
+
+        ButtonGroup btGroup = new ButtonGroup();
+        btGroup.add(creer);
+        btGroup.add(modifier);
+
+        creer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                this.afficherCreer();
+            }
+        });
     }
 
-    //evenements composants graphiques
+    private void afficherCreer(){
+        if(!(modifierIsShown)){
+
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
