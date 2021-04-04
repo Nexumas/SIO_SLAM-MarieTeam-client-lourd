@@ -11,6 +11,10 @@ public class Fenetre {
         fenetre.setSize(800,600);
         fenetre.setTitle("MarieTeam");
 
+        JRadioButton creer = new JRadioButton();
+        JRadioButton modifier = new JRadioButton();
+
+
     }
 
 }
