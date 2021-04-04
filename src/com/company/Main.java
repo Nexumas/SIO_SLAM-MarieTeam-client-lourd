@@ -9,8 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, DocumentException {
 
-        Fenetre fen = new Fenetre();
-        fen.afficher_fenetre();
+        new Fenetre();
 
         Connexion conn = new Connexion();
 
