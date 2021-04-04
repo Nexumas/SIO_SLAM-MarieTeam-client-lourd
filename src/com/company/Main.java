@@ -7,13 +7,18 @@ import java.io.FileNotFoundException;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException, DocumentException {
+    public static void main(String[] args) throws FileNotFoundException, DocumentException{
 
         new Fenetre();
 
-        Connexion conn = new Connexion();
+        try {
+            Connexion conn = new Connexion();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Pdf pdf = new Pdf(1, "test");
 
     }
+
 }

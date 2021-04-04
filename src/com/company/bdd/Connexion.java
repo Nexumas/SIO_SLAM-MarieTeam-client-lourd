@@ -1,35 +1,37 @@
 package com.company.bdd;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import javax.swing.*;
+import java.sql.*;
 
 public class Connexion {
 
-    public Connexion(){
+    public Connexion() throws Exception {
 
-        /* Connexion à la base de données */
-        String url = "jdbc:mysql://localhost:3306/marieteam";
-        String utilisateur = "root";
-        String motDePasse = "";
-        Connection connexion = null;
-        try {
-            connexion = DriverManager.getConnection( url, utilisateur, motDePasse );
-            System.out.println("ok");
-            /* Ici, nous placerons nos requêtes vers la BDD */
-            /* ... */
+        Connection conn;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(p.getServeurBD()+"xelfi", p.getNomUtilisateur(), p.getMotDePasse());
+            JOptionPane.showMessageDialog(null, "connexion ok");
+            Statement st = conn.createStatement();
+            String req = "INSERT INTO client VALUES (1, 'robert', 'dupont', 1, '2020/12/3')";
+            st.executeUpdate(req);
+            String req2 = "SELECT * FROM client";
+            ResultSet r = st.executeQuery(req2);
 
-        } catch ( SQLException e ) {
-            /* Gérer les éventuelles erreurs ici */
-        } finally {
-            if ( connexion != null )
-                try {
-                    /* Fermeture de la connexion */
-                    connexion.close();
-                } catch ( SQLException ignore ) {
-                    /* Si une erreur survient lors de la fermeture, il suffit de l'ignorer. */
-                }
+        }catch (SQLException | ClassNotFoundException ex){
+            JOptionPane.showMessageDialog(null, "connexion impossible : " + ex.getMessage());
         }
+
+        finally {
+            try{
+                if(conn != null){
+                    conn.close();
+                }
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }
+        }
+        System.exit(0);
 
     }
 }
