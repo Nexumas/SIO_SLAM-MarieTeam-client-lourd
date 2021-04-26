@@ -5,18 +5,18 @@ import java.sql.*;
 
 public class Connexion {
 
-    public Connexion() throws Exception {
+    //execute une requête SELECT avec la requete donné en paramètre et retourne le résultat
+    public ResultSet querySelect(String req) throws Exception {
 
-        Connection conn;
+        Connection conn = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(p.getServeurBD()+"xelfi", p.getNomUtilisateur(), p.getMotDePasse());
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/marieteam", "root", "");
             JOptionPane.showMessageDialog(null, "connexion ok");
             Statement st = conn.createStatement();
-            String req = "INSERT INTO client VALUES (1, 'robert', 'dupont', 1, '2020/12/3')";
-            st.executeUpdate(req);
-            String req2 = "SELECT * FROM client";
-            ResultSet r = st.executeQuery(req2);
+            ResultSet r = st.executeQuery(req);
+
+            return r;
 
         }catch (SQLException | ClassNotFoundException ex){
             JOptionPane.showMessageDialog(null, "connexion impossible : " + ex.getMessage());
@@ -33,5 +33,6 @@ public class Connexion {
         }
         System.exit(0);
 
+        return null;
     }
 }

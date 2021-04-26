@@ -45,7 +45,7 @@ public class Fenetre extends JFrame implements ActionListener {
         creer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                this.afficherCreer();
+                //this.afficherCreer();
             }
         });
     }
