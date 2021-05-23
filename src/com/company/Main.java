@@ -2,8 +2,6 @@ package com.company;
 
 import com.company.bdd.Connexion;
 import com.itextpdf.text.DocumentException;
-import org.junit.Assert;
-import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.sql.ResultSet;
