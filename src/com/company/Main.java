@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args){
 
-        //Fenetre f = new Fenetre();
+        Fenetre f = new Fenetre();
 
         String nom = "Posologie";
         String req = "SELECT bateau.idbateau, nom, largeur, longueur, vitesse FROM bateau, bateauvoyageur " +

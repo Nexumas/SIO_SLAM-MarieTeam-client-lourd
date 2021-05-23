@@ -11,18 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eac795f-809a-4797-95d3-42d11720357c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SIO_SLAM_CL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SIO_SLAM_CL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/BateauVoyageur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/BateauVoyageur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Fenetre$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Fenetre$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Fenetre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/Connexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/Connexion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/BateauVoyageur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BateauVoyageur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Fenetre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/bdd/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/bdd/Connexion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +101,7 @@
       <workItem from="1621708077150" duration="598000" />
       <workItem from="1621717431369" duration="2179000" />
       <workItem from="1621764332360" duration="4858000" />
-      <workItem from="1621778220221" duration="488000" />
+      <workItem from="1621778220221" duration="881000" />
     </task>
     <task id="LOCAL-00001" summary="n">
       <created>1615822476536</created>
