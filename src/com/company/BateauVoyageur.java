@@ -1,7 +1,11 @@
 package com.company;
 import java.util.List;
 
+/**
+ *
+ */
 public class BateauVoyageur extends Bateau {
+
 
     private int vitesseBatVoy;
 
@@ -16,18 +20,22 @@ public class BateauVoyageur extends Bateau {
         this.imageBatVoy = image;
     }
 
+    //recupere la vitesse
     public int getVitesseBatVoy() {
         return vitesseBatVoy;
     }
 
+    //recupere liste equipements
     public List<Equipement> getLesEquipements(){
         return lesEquipements;
     }
 
+    //recupere l'image
     public String getImage(){
         return imageBatVoy;
     }
 
+    //convertis les informations en string
     public String toString(){
         String sBat = "";
         sBat += "Nom du bateau : "+this.nomBat+"\n";

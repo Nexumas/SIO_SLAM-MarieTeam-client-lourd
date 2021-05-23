@@ -1,12 +1,18 @@
 package com.company.bdd;
 
+import com.company.Bateau;
+import org.junit.Assert;
+
 import javax.swing.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Connexion {
 
+    private ArrayList<Bateau> batList = new ArrayList<>();
+
     //execute une requête SELECT avec la requete donné en paramètre et retourne le résultat
-    public ResultSet querySelect(String req) throws Exception {
+    public ResultSet querySelect(String req){
 
         Connection conn = null;
         try{
@@ -15,6 +21,19 @@ public class Connexion {
             JOptionPane.showMessageDialog(null, "connexion ok");
             Statement st = conn.createStatement();
             ResultSet r = st.executeQuery(req);
+            while (r.next()){
+                System.out.println(r.getString(1)+" " + r.getString(2)
+                        +" "+r.getString(3)+" "+r.getString(4)
+                        +" "+ r.getString(5));
+
+                Bateau bat = new Bateau(Integer.parseInt(r.getString(1))
+                        , r.getString(2)
+                        , Float.parseFloat(r.getString(3))
+                        , Float.parseFloat(r.getString(4)));
+
+                batList.add(bat);
+
+            }
 
             return r;
 
@@ -34,5 +53,9 @@ public class Connexion {
         System.exit(0);
 
         return null;
+    }
+
+    public ArrayList<Bateau> getBatList(){
+        return this.batList;
     }
 }

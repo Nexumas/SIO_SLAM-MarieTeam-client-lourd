@@ -2,27 +2,34 @@ package com.company;
 
 import com.company.bdd.Connexion;
 import com.itextpdf.text.DocumentException;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.sql.ResultSet;
 
+
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException, DocumentException{
+    public static void main(String[] args){
 
-        new Fenetre();
+        //Fenetre f = new Fenetre();
 
-        try {
+        String nom = "Posologie";
+        String req = "SELECT bateau.idbateau, nom, largeur, longueur, vitesse FROM bateau, bateauvoyageur " +
+                "where bateau.idbateau = bateauvoyageur.idbateau";
+
+        try{
             Connexion conn = new Connexion();
-            ResultSet r = conn.querySelect("SELECT * FROM utilisateur");
-            while(r.next()){
-                
-            }
-        } catch (Exception e) {
+            conn.querySelect(req);
+
+            Pdf pdf = new Pdf(1, "test");
+
+
+        }catch(Exception e){
             e.printStackTrace();
         }
 
-        Pdf pdf = new Pdf(1, "test");
 
     }
 
