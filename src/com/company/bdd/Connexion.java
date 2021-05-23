@@ -1,7 +1,6 @@
 package com.company.bdd;
 
 import com.company.Bateau;
-import org.junit.Assert;
 
 import javax.swing.*;
 import java.sql.*;
