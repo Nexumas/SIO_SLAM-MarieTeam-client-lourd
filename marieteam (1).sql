@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 23 mai 2021 à 14:06
+-- Généré le : lun. 24 mai 2021 à 15:16
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `associer`;
 CREATE TABLE IF NOT EXISTS `associer` (
-  `idReservation` varchar(10) NOT NULL,
-  `idType` varchar(10) NOT NULL,
+  `idReservation` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idType` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nombrePlaces` int(11) DEFAULT NULL,
   PRIMARY KEY (`idReservation`,`idType`),
   KEY `idType` (`idType`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `associer`
@@ -80,11 +80,11 @@ INSERT INTO `associer` (`idReservation`, `idType`, `nombrePlaces`) VALUES
 
 DROP TABLE IF EXISTS `avoir`;
 CREATE TABLE IF NOT EXISTS `avoir` (
-  `idBateau` varchar(10) NOT NULL,
-  `idEquipement` varchar(10) NOT NULL,
+  `idBateau` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idEquipement` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idBateau`,`idEquipement`),
   KEY `idEquipement` (`idEquipement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `avoir`
@@ -102,12 +102,12 @@ INSERT INTO `avoir` (`idBateau`, `idEquipement`) VALUES
 DROP TABLE IF EXISTS `bateau`;
 CREATE TABLE IF NOT EXISTS `bateau` (
   `idBateau` int(10) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) DEFAULT NULL,
+  `nom` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `largeur` double DEFAULT NULL,
   `longueur` double DEFAULT NULL,
   PRIMARY KEY (`idBateau`),
   KEY `FOREIGN` (`idBateau`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `bateau`
@@ -125,11 +125,11 @@ INSERT INTO `bateau` (`idBateau`, `nom`, `largeur`, `longueur`) VALUES
 
 DROP TABLE IF EXISTS `bateaufret`;
 CREATE TABLE IF NOT EXISTS `bateaufret` (
-  `idBateau` varchar(10) NOT NULL,
+  `idBateau` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `poidChargeMax` int(11) DEFAULT NULL,
   `volumeMax` double DEFAULT NULL,
   PRIMARY KEY (`idBateau`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -140,11 +140,11 @@ CREATE TABLE IF NOT EXISTS `bateaufret` (
 DROP TABLE IF EXISTS `bateauvoyageur`;
 CREATE TABLE IF NOT EXISTS `bateauvoyageur` (
   `idBateau` int(10) NOT NULL,
-  `image` varchar(100) NOT NULL,
+  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `vitesse` int(11) DEFAULT NULL,
   PRIMARY KEY (`idBateau`),
   KEY `FOREIGN` (`idBateau`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `bateauvoyageur`
@@ -162,12 +162,12 @@ INSERT INTO `bateauvoyageur` (`idBateau`, `image`, `vitesse`) VALUES
 
 DROP TABLE IF EXISTS `capacite`;
 CREATE TABLE IF NOT EXISTS `capacite` (
-  `idBateau` varchar(10) NOT NULL,
-  `idCat` varchar(10) NOT NULL,
+  `idBateau` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idCat` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `places` int(11) DEFAULT NULL,
   PRIMARY KEY (`idBateau`,`idCat`),
   KEY `idCat` (`idCat`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -177,11 +177,11 @@ CREATE TABLE IF NOT EXISTS `capacite` (
 
 DROP TABLE IF EXISTS `categorie`;
 CREATE TABLE IF NOT EXISTS `categorie` (
-  `idCat` varchar(10) NOT NULL,
-  `libelle` varchar(50) DEFAULT NULL,
-  `description` varchar(50) DEFAULT NULL,
+  `idCat` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `libelle` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idCat`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -193,11 +193,11 @@ DROP TABLE IF EXISTS `equipement`;
 CREATE TABLE IF NOT EXISTS `equipement` (
   `idEquipement` int(10) NOT NULL AUTO_INCREMENT,
   `idbateau` int(10) NOT NULL,
-  `libelle` varchar(50) DEFAULT NULL,
-  `description` varchar(50) DEFAULT NULL,
+  `libelle` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idEquipement`),
   KEY `FK_ID` (`idbateau`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `equipement`
@@ -216,12 +216,12 @@ DROP TABLE IF EXISTS `liaison`;
 CREATE TABLE IF NOT EXISTS `liaison` (
   `idLiaison` int(10) NOT NULL AUTO_INCREMENT,
   `distanceMileMarin` double DEFAULT NULL,
-  `portDepart` varchar(50) DEFAULT NULL,
-  `portArrive` varchar(50) DEFAULT NULL,
-  `idSecteur` varchar(10) NOT NULL,
+  `portDepart` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `portArrive` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `idSecteur` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idLiaison`),
   KEY `idSecteur` (`idSecteur`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `liaison`
@@ -240,11 +240,11 @@ INSERT INTO `liaison` (`idLiaison`, `distanceMileMarin`, `portDepart`, `portArri
 
 DROP TABLE IF EXISTS `periode`;
 CREATE TABLE IF NOT EXISTS `periode` (
-  `idPeriode` varchar(10) NOT NULL,
+  `idPeriode` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `DebutPeriode` date DEFAULT NULL,
   `FinPeriode` date DEFAULT NULL,
   PRIMARY KEY (`idPeriode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `periode`
@@ -266,12 +266,12 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `idReservation` int(10) NOT NULL AUTO_INCREMENT,
   `dateReservation` datetime DEFAULT NULL,
   `prixTotal` decimal(10,0) NOT NULL,
-  `idUtilisateur` varchar(10) NOT NULL,
-  `idTraverse` varchar(10) NOT NULL,
+  `idUtilisateur` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idTraverse` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idReservation`),
   KEY `idUtilisasteur` (`idUtilisateur`),
   KEY `idTraverse` (`idTraverse`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `reservation`
@@ -298,9 +298,9 @@ INSERT INTO `reservation` (`idReservation`, `dateReservation`, `prixTotal`, `idU
 DROP TABLE IF EXISTS `secteur`;
 CREATE TABLE IF NOT EXISTS `secteur` (
   `idSecteur` int(10) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) DEFAULT NULL,
+  `nom` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idSecteur`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `secteur`
@@ -319,13 +319,13 @@ INSERT INTO `secteur` (`idSecteur`, `nom`) VALUES
 DROP TABLE IF EXISTS `tarif`;
 CREATE TABLE IF NOT EXISTS `tarif` (
   `idLiaison` int(10) NOT NULL,
-  `idPeriode` varchar(10) NOT NULL,
-  `idType` varchar(10) NOT NULL,
+  `idPeriode` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idType` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prixUnite` double DEFAULT NULL,
   PRIMARY KEY (`idLiaison`,`idPeriode`,`idType`),
   KEY `idPeriode` (`idPeriode`),
   KEY `idType` (`idType`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `tarif`
@@ -370,14 +370,14 @@ CREATE TABLE IF NOT EXISTS `traverse` (
   `dateDepart` date DEFAULT NULL,
   `heureDepart` time DEFAULT NULL,
   `duree` double DEFAULT NULL,
-  `idLiaison` varchar(10) NOT NULL,
-  `idBateau` varchar(10) NOT NULL,
-  `idPeriode` varchar(10) NOT NULL,
+  `idLiaison` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idBateau` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idPeriode` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idTraverse`),
   KEY `idLiaison` (`idLiaison`),
   KEY `idBateau` (`idBateau`),
   KEY `FK_idPeriode` (`idPeriode`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `traverse`
@@ -398,12 +398,12 @@ INSERT INTO `traverse` (`idTraverse`, `dateDepart`, `heureDepart`, `duree`, `idL
 
 DROP TABLE IF EXISTS `type`;
 CREATE TABLE IF NOT EXISTS `type` (
-  `idType` varchar(10) NOT NULL,
-  `libelle` varchar(50) DEFAULT NULL,
-  `idCat` varchar(10) NOT NULL,
+  `idType` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `libelle` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `idCat` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idType`),
   KEY `idCat` (`idCat`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -413,12 +413,12 @@ CREATE TABLE IF NOT EXISTS `type` (
 
 DROP TABLE IF EXISTS `typeplace`;
 CREATE TABLE IF NOT EXISTS `typeplace` (
-  `idType` varchar(10) NOT NULL,
-  `libelle` varchar(50) NOT NULL,
-  `idCat` varchar(10) NOT NULL,
+  `idType` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `libelle` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idCat` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idType`),
   KEY `fk_idCat` (`idCat`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `typeplace`
@@ -441,13 +441,13 @@ DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `idUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
   `estAdmin` tinyint(1) DEFAULT NULL,
-  `nom` varchar(50) DEFAULT NULL,
-  `prenom` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `mot_de_passe` varchar(50) DEFAULT NULL,
+  `nom` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prenom` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mot_de_passe` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nbPoint` int(11) DEFAULT '0',
   PRIMARY KEY (`idUtilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
