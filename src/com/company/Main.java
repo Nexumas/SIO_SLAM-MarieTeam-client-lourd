@@ -17,6 +17,8 @@ public class Main {
             Gestionnaire conn = new Gestionnaire();
             conn.selectListeBateaux();
 
+            conn.selectBateauVoyageur();
+
             Pdf pdf = new Pdf(1, "test");
 
 

@@ -22,6 +22,8 @@ public class Gestionnaire {
             ResultSet r = st.executeQuery("SELECT bateau.idbateau, nom, largeur, longueur, vitesse FROM bateau, bateauvoyageur " +
                     "where bateau.idbateau = bateauvoyageur.idbateau");
             while (r.next()){
+
+                //test
                 System.out.println(r.getString(1)+" " + r.getString(2)
                         +" "+r.getString(3)+" "+r.getString(4)
                         +" "+ r.getString(5));
@@ -32,6 +34,46 @@ public class Gestionnaire {
                         , Float.parseFloat(r.getString(4)));
 
                 batList.add(bat);
+
+            }
+
+            return r;
+
+        }catch (SQLException | ClassNotFoundException ex){
+            JOptionPane.showMessageDialog(null, "connexion impossible : " + ex.getMessage());
+        }
+
+        finally {
+            try{
+                if(conn != null){
+                    conn.close();
+                }
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }
+        }
+        System.exit(0);
+
+        return null;
+    }
+
+    public ResultSet selectBateauVoyageur(){
+
+        Connection conn = null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/marieteam", "root", "");
+            JOptionPane.showMessageDialog(null, "connexion ok");
+            Statement st = conn.createStatement();
+            ResultSet r = st.executeQuery("SELECT bateau.idbateau, nom, largeur, longueur, vitesse, idequipement, libelle " +
+                    "FROM bateau, bateauvoyageur, equipement " +
+                    "where bateau.idbateau = bateauvoyageur.idbateau and bateau.idbateau = equipement.idbateau");
+            while (r.next()){
+
+                //test
+                System.out.println(r.getString(1)+" " + r.getString(2)
+                        +" "+r.getString(3)+" "+r.getString(4)
+                        +" "+ r.getString(5)+" "+ r.getString(6)+" "+ r.getString(7));
 
             }
 
