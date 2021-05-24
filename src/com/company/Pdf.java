@@ -21,6 +21,7 @@ public class Pdf {
         try{
             FileOutputStream output = new FileOutputStream(unId + "_" + unNom + ".pdf");
             PdfWriter pdf = PdfWriter.getInstance(document, output);
+            ecrire_texte();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -29,7 +30,7 @@ public class Pdf {
 
     public void ecrire_texte(){
         document.open();
-        Paragraph informations = new Paragraph();
+        Paragraph informations = new Paragraph("test");
         document.close();
     }
 

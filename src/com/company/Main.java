@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.bdd.Connexion;
+import com.company.bdd.Gestionnaire;
 import com.itextpdf.text.DocumentException;
 
 import java.io.FileNotFoundException;
@@ -13,13 +13,9 @@ public class Main {
 
         Fenetre f = new Fenetre();
 
-        String nom = "Posologie";
-        String req = "SELECT bateau.idbateau, nom, largeur, longueur, vitesse FROM bateau, bateauvoyageur " +
-                "where bateau.idbateau = bateauvoyageur.idbateau";
-
         try{
-            Connexion conn = new Connexion();
-            conn.querySelect(req);
+            Gestionnaire conn = new Gestionnaire();
+            conn.selectListeBateaux();
 
             Pdf pdf = new Pdf(1, "test");
 

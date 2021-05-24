@@ -23,4 +23,8 @@ public class Bateau {
         return sBat;
     }
 
+    public String getNomBat(){
+        return this.nomBat;
+    }
+
 }

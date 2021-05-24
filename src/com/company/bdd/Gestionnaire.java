@@ -6,12 +6,12 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Connexion {
+public class Gestionnaire {
 
     private ArrayList<Bateau> batList = new ArrayList<>();
 
     //execute une requête SELECT avec la requete donné en paramètre et retourne le résultat
-    public ResultSet querySelect(String req){
+    public ResultSet selectListeBateaux(){
 
         Connection conn = null;
         try{
@@ -19,7 +19,8 @@ public class Connexion {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/marieteam", "root", "");
             JOptionPane.showMessageDialog(null, "connexion ok");
             Statement st = conn.createStatement();
-            ResultSet r = st.executeQuery(req);
+            ResultSet r = st.executeQuery("SELECT bateau.idbateau, nom, largeur, longueur, vitesse FROM bateau, bateauvoyageur " +
+                    "where bateau.idbateau = bateauvoyageur.idbateau");
             while (r.next()){
                 System.out.println(r.getString(1)+" " + r.getString(2)
                         +" "+r.getString(3)+" "+r.getString(4)
