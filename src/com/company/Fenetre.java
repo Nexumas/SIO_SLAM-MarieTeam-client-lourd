@@ -15,6 +15,7 @@ public class Fenetre extends JFrame implements ActionListener {
     private JButton generer = new JButton();
     private JButton terminer = new JButton();
     private Gestionnaire bdd = new Gestionnaire();
+    private JTextArea infoBat = new JTextArea();
     private BateauVoyageur batVoy;
 
     //lance l'affichage de la fenêtre et des composants graphiques
@@ -37,7 +38,7 @@ public class Fenetre extends JFrame implements ActionListener {
         titre.setBounds(350, 0, 100, 20);
         titre.setText("MarieTeam");
 
-        selecBat.setBounds(625,250,300, 40);
+        selecBat.setBounds(625,175,300, 40);
         this.add(selecBat);
         initListBat();
 
@@ -51,14 +52,21 @@ public class Fenetre extends JFrame implements ActionListener {
         this.add(terminer);
         this.add(modifier);
 
+        infoBat.setBounds(600, 250, 350,225);
+        infoBat.setEditable(false);
+
         selecBat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 bdd.selectBateauVoyageur(selecBat.getSelectedItem().toString());
                 batVoy = bdd.getBateauvoyageur();
-                System.out.println(batVoy.getNomBat() + " " + batVoy.getVitesseBatVoy());
+
+                infoBat.setText(getBatVoy().toString());
             }
         });
+
+        this.add(infoBat);
+
 
     }
 
@@ -69,6 +77,10 @@ public class Fenetre extends JFrame implements ActionListener {
         for(Bateau unBateau : this.bdd.getBatList()){
             selecBat.addItem(unBateau.getNomBat());
         }
+    }
+
+    public BateauVoyageur getBatVoy(){
+        return this.batVoy;
     }
 
     @Override
