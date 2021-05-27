@@ -37,6 +37,7 @@ public class Fenetre extends JFrame implements ActionListener {
 
         selecBat.setBounds(200,480,400, 40);
         initListBat();
+        this.add(selecBat);
 
         generer.setBounds(250, 120, 300, 80);
         generer.setText("GENERER");
@@ -50,7 +51,6 @@ public class Fenetre extends JFrame implements ActionListener {
     private void initListBat(){
         //Initialise la liste des bateaux disponibles dans la comboBox selecBat
         Gestionnaire forBatList = new Gestionnaire();
-        forBatList.selectListeBateaux();
         ArrayList<Bateau> lesBateaux = forBatList.getBatList();
         for(Bateau unBateau : lesBateaux){
             selecBat.addItem(unBateau.getNomBat());

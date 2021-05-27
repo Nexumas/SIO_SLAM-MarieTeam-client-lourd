@@ -11,11 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eac795f-809a-4797-95d3-42d11720357c" name="Default Changelist" comment="Générer frontend">
-      <change afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Modification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_05_2021_15_33__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_05_2021_15_33__Default_Changelist_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/tables/Bateau.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/tables/BateauVoyageur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/tables/Equipement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Equipement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Equipement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/Gestionnaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/Gestionnaire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Equipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Fenetre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/bdd/Gestionnaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/bdd/Gestionnaire.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +112,8 @@
       <workItem from="1621764332360" duration="4858000" />
       <workItem from="1621778220221" duration="4047000" />
       <workItem from="1621858622304" duration="5860000" />
+      <workItem from="1621879069355" duration="1479000" />
+      <workItem from="1622122766263" duration="1343000" />
     </task>
     <task id="LOCAL-00001" summary="n">
       <created>1615822476536</created>
@@ -154,21 +161,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1621867293942" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1621869285788">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1622124115643">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1621869285788" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1621869285788">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622124115643" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1622124115642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1621869285788" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1621869285788">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622124115642" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1622124115641">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1621869285788" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1621869285788">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622124115641" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1622124115642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1621869285788" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622124115642" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1621871881125">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1621871881125" />
   </component>
 </project>

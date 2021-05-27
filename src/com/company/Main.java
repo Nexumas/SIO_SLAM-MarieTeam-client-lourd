@@ -17,8 +17,6 @@ public class Main {
             Gestionnaire conn = new Gestionnaire();
             conn.selectListeBateaux();
 
-            conn.selectBateauVoyageur();
-
             Pdf pdf = new Pdf(1, "test");
 
 
@@ -27,6 +25,11 @@ public class Main {
         }
 
 
+    }
+
+    public String getNomBateauChoisi(){
+        String nom = "TitanicusII";
+        return nom;
     }
 
 }
