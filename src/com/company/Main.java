@@ -13,23 +13,6 @@ public class Main {
 
         Fenetre f = new Fenetre();
 
-        try{
-            Gestionnaire conn = new Gestionnaire();
-            conn.selectListeBateaux();
-
-            Pdf pdf = new Pdf(1, "test");
-
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
-
-    }
-
-    public String getNomBateauChoisi(){
-        String nom = "TitanicusII";
-        return nom;
     }
 
 }

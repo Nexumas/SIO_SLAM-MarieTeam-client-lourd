@@ -11,16 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eac795f-809a-4797-95d3-42d11720357c" name="Default Changelist" comment="Générer frontend">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_05_2021_15_33__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_05_2021_15_33__Default_Changelist_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Equipement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Equipement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Fenetre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/Gestionnaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIO_SLAM_CL/com/company/bdd/Gestionnaire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Equipement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Equipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Bateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Fenetre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/bdd/Gestionnaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/bdd/Gestionnaire.java" afterDir="false" />
+    </list>
+    <list id="514baeb7-d6c2-4b17-bb5f-6c1cf857f075" name="Changes by brign" comment="">
+      <change beforePath="$PROJECT_DIR$/src/com/company/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Fenetre.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/com/company/Fenetre.java">
+      <ranges>
+        <range start1="16" end1="16" start2="16" end2="18" changelist="2eac795f-809a-4797-95d3-42d11720357c" />
+        <range start1="34" end1="35" start2="36" end2="37" changelist="2eac795f-809a-4797-95d3-42d11720357c" />
+        <range start1="37" end1="39" start2="39" end2="40" changelist="2eac795f-809a-4797-95d3-42d11720357c" />
+        <range start1="40" end1="40" start2="41" end2="42" changelist="2eac795f-809a-4797-95d3-42d11720357c" />
+        <range start1="41" end1="42" start2="43" end2="44" changelist="514baeb7-d6c2-4b17-bb5f-6c1cf857f075" />
+        <range start1="43" end1="44" start2="45" end2="46" changelist="514baeb7-d6c2-4b17-bb5f-6c1cf857f075" />
+        <range start1="45" end1="46" start2="47" end2="48" changelist="514baeb7-d6c2-4b17-bb5f-6c1cf857f075" />
+        <range start1="47" end1="47" start2="49" end2="61" changelist="514baeb7-d6c2-4b17-bb5f-6c1cf857f075" />
+        <range start1="53" end1="55" start2="67" end2="69" changelist="2eac795f-809a-4797-95d3-42d11720357c" />
+        <range start1="59" end1="62" start2="73" end2="73" changelist="2eac795f-809a-4797-95d3-42d11720357c" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1pncClTG7Ep7arUzlpJCuxwg9dY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,10 +71,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/junit.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -70,12 +87,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -113,7 +142,8 @@
       <workItem from="1621778220221" duration="4047000" />
       <workItem from="1621858622304" duration="5860000" />
       <workItem from="1621879069355" duration="1479000" />
-      <workItem from="1622122766263" duration="1343000" />
+      <workItem from="1622122766263" duration="2168000" />
+      <workItem from="1622125483572" duration="3644000" />
     </task>
     <task id="LOCAL-00001" summary="n">
       <created>1615822476536</created>
@@ -133,7 +163,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -151,35 +181,5 @@
     <MESSAGE value="n" />
     <MESSAGE value="Générer frontend" />
     <option name="LAST_COMMIT_MESSAGE" value="Générer frontend" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621867310920">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1621867310920" />
-    <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1621867293942">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1621867293942" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1622124115643">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622124115643" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1622124115642">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622124115642" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1622124115641">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622124115641" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1622124115642">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622124115642" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1621871881125">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1621871881125" />
   </component>
 </project>

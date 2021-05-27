@@ -7,6 +7,10 @@ public class Bateau {
     protected float longueurBat;
     protected float largeurBat;
 
+    public Bateau(String nom){
+        this.nomBat = nom;
+    }
+
     public Bateau(int id, String nom, float longueur, float largeur){
         this.largeurBat = largeur;
         this.longueurBat = longueur;
@@ -26,5 +30,6 @@ public class Bateau {
     public String getNomBat(){
         return this.nomBat;
     }
+
 
 }
