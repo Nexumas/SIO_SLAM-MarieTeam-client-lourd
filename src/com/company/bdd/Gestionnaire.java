@@ -18,7 +18,6 @@ public class Gestionnaire {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/marieteam", "root", "");
-            JOptionPane.showMessageDialog(null, "connexion ok");
             Statement st = conn.createStatement();
             ResultSet r = st.executeQuery("SELECT bateau.idbateau, nom, largeur, longueur, vitesse FROM bateau, bateauvoyageur " +
                     "where bateau.idbateau = bateauvoyageur.idbateau");
@@ -59,7 +58,6 @@ public class Gestionnaire {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/marieteam", "root", "");
-            JOptionPane.showMessageDialog(null, "connexion ok");
             Statement st_1 = conn.createStatement();
             Statement st_2 = conn.createStatement();
             ResultSet r = st_1.executeQuery("SELECT bateau.idbateau, nom, largeur, longueur, vitesse, image " +

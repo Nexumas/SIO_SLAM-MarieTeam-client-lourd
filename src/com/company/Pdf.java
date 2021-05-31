@@ -1,45 +1,51 @@
 package com.company;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.PdfDocument;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Pdf {
 
-    private int idPdf;
+    private static int idPdf = 0;
     private String nomPdf;
     private Document document = new Document();
 
-    public Pdf(int unId, String unNom) throws FileNotFoundException, DocumentException {
-        this.idPdf = unId;
+    public Pdf(String unNom, ArrayList<BateauVoyageur> listBatVoy) throws FileNotFoundException, DocumentException {
         this.nomPdf = unNom;
+        idPdf += 1;
 
         try{
-            FileOutputStream output = new FileOutputStream(unId + "_" + unNom + ".pdf");
-            PdfWriter pdf = PdfWriter.getInstance(document, output);
-            ecrire_texte();
+            FileOutputStream output = new FileOutputStream(this.idPdf + "_" + unNom + ".pdf");
+            PdfWriter.getInstance(document, output);
+            ecrire_texte(listBatVoy);
+
+            JOptionPane.showMessageDialog(null, "PDF créé avec succès !");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void ecrire_texte(){
+    private void ecrire_texte( ArrayList<BateauVoyageur> listBatVoy) throws DocumentException, IOException {
         document.open();
-        Paragraph informations = new Paragraph("test");
+        for(BateauVoyageur bat : listBatVoy){
+            charger_image(bat.getImage());
+            document.add(new Paragraph(bat.toString() + "\n"));
+        }
+
         document.close();
     }
 
-    public void charger_image(){
-
-    }
-
-    public void verif_bat(Bateau unBateau){
-
+    private void charger_image(String lien) throws DocumentException, IOException {
+        String imageFile = lien;
+        Image image = Image.getInstance(lien);
+        document.add(image);
     }
 
 }

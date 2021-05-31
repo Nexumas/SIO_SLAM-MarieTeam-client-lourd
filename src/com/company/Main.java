@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws DocumentException, FileNotFoundException {
         Fenetre f = new Fenetre();
     }
 

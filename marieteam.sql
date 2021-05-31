@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 24 mai 2021 à 15:16
+-- Généré le : lun. 31 mai 2021 à 16:49
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -55,6 +55,7 @@ INSERT INTO `associer` (`idReservation`, `idType`, `nombrePlaces`) VALUES
 ('16', 'A1', 2),
 ('17', 'A1', 2),
 ('18', 'A1', 2),
+('18', 'B1', 1),
 ('20', 'A1', 2),
 ('22', 'A1', 2),
 ('3', 'A1', 5),
@@ -107,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `bateau` (
   `longueur` double DEFAULT NULL,
   PRIMARY KEY (`idBateau`),
   KEY `FOREIGN` (`idBateau`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `bateau`
@@ -115,7 +116,9 @@ CREATE TABLE IF NOT EXISTS `bateau` (
 
 INSERT INTO `bateau` (`idBateau`, `nom`, `largeur`, `longueur`) VALUES
 (1, 'TitanicusII', 456, 654),
-(2, 'Posologie', 500, 750);
+(2, 'Posologie', 500, 750),
+(3, 'Le Tituan', 180, 200),
+(4, 'Conquerant', 150, 190);
 
 -- --------------------------------------------------------
 
@@ -151,8 +154,10 @@ CREATE TABLE IF NOT EXISTS `bateauvoyageur` (
 --
 
 INSERT INTO `bateauvoyageur` (`idBateau`, `image`, `vitesse`) VALUES
-(1, '', 150),
-(2, '', 100);
+(1, 'images/titanicus2.jpg', 150),
+(2, 'images/posologie.jpg', 100),
+(3, 'images/Letituan.jpg', 120),
+(4, 'images/conquerant.jpg', 100);
 
 -- --------------------------------------------------------
 
@@ -197,14 +202,25 @@ CREATE TABLE IF NOT EXISTS `equipement` (
   `description` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idEquipement`),
   KEY `FK_ID` (`idbateau`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `equipement`
 --
 
 INSERT INTO `equipement` (`idEquipement`, `idbateau`, `libelle`, `description`) VALUES
-(1, 1, 'boue', 'test');
+(1, 1, 'bouées x 6', 'test'),
+(2, 1, 'extincteurs x 5', NULL),
+(3, 2, 'gilets de sauvetage x 50', NULL),
+(4, 2, 'bouées x 6', NULL),
+(5, 2, 'extincteurs x 3', NULL),
+(6, 3, 'bouées x 10', NULL),
+(7, 3, 'extincteurs x 10', NULL),
+(8, 3, 'distributeur boissons x 3', NULL),
+(9, 3, 'gilets de sauvetage x 100', NULL),
+(10, 4, 'extincteurs x 5', NULL),
+(11, 4, 'bouées x 6', NULL),
+(12, 4, 'gilets de sauvetage x 20', NULL);
 
 -- --------------------------------------------------------
 
@@ -221,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `liaison` (
   `idSecteur` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`idLiaison`),
   KEY `idSecteur` (`idSecteur`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `liaison`
@@ -230,7 +246,9 @@ CREATE TABLE IF NOT EXISTS `liaison` (
 INSERT INTO `liaison` (`idLiaison`, `distanceMileMarin`, `portDepart`, `portArrive`, `idSecteur`) VALUES
 (1, 159, 'douaix', 'Lille', '1'),
 (2, 45, 'Paris', 'Lyon', '2'),
-(3, 456, 'Paris', 'New York', '2');
+(3, 456, 'Paris', 'New York', '2'),
+(4, 1200, 'Dunkerque', 'St-Petersbourg', '3'),
+(5, 500, 'Dunkerque', 'Marseille', '3');
 
 -- --------------------------------------------------------
 
@@ -253,7 +271,8 @@ CREATE TABLE IF NOT EXISTS `periode` (
 INSERT INTO `periode` (`idPeriode`, `DebutPeriode`, `FinPeriode`) VALUES
 ('2020Dec', '2020-12-01', '2020-12-31'),
 ('2020Nov', '2020-11-01', '2020-11-30'),
-('2021jan', '2021-01-01', '2021-03-30');
+('2021jan', '2021-01-01', '2021-03-30'),
+('Mai2021', '2021-05-01', '2021-06-30');
 
 -- --------------------------------------------------------
 
@@ -271,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   PRIMARY KEY (`idReservation`),
   KEY `idUtilisasteur` (`idUtilisateur`),
   KEY `idTraverse` (`idTraverse`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `reservation`
@@ -287,7 +306,9 @@ INSERT INTO `reservation` (`idReservation`, `dateReservation`, `prixTotal`, `idU
 (13, '2021-03-08 13:05:00', '25', '11', '6'),
 (14, '2021-03-29 12:30:00', '25', '11', '6'),
 (15, '2021-03-29 12:31:00', '25', '11', '6'),
-(16, '2021-05-04 22:54:00', '37', '11', '6');
+(16, '2021-05-04 22:54:00', '37', '11', '6'),
+(17, '2021-05-26 23:38:00', '25', '2', '6'),
+(18, '2021-05-27 00:36:00', '250', '2', '9');
 
 -- --------------------------------------------------------
 
@@ -300,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `secteur` (
   `idSecteur` int(10) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idSecteur`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `secteur`
@@ -308,7 +329,8 @@ CREATE TABLE IF NOT EXISTS `secteur` (
 
 INSERT INTO `secteur` (`idSecteur`, `nom`) VALUES
 (1, 'Poitoux-Charente'),
-(2, 'Seine-St-Denis');
+(2, 'Seine-St-Denis'),
+(3, 'Nord');
 
 -- --------------------------------------------------------
 
@@ -356,7 +378,22 @@ INSERT INTO `tarif` (`idLiaison`, `idPeriode`, `idType`, `prixUnite`) VALUES
 (2, '2021jan', 'A2', 40),
 (2, '2021jan', 'A3', 60),
 (2, '2021jan', 'B1', 120),
-(2, '2021jan', 'B2', 180);
+(2, '2021jan', 'B2', 180),
+(3, '2020Dec', 'A1', 40),
+(3, '2020Dec', 'A2', 30),
+(3, '2020Dec', 'A3', 20),
+(3, '2020Dec', 'B1', 170),
+(3, '2020Dec', 'B2', 130),
+(4, 'Mai2021', 'A1', 35),
+(4, 'Mai2021', 'A2', 20),
+(4, 'Mai2021', 'A3', 15),
+(4, 'Mai2021', 'B1', 150),
+(4, 'Mai2021', 'B2', 190),
+(5, 'Mai2021', 'A1', 50),
+(5, 'Mai2021', 'A2', 30),
+(5, 'Mai2021', 'A3', 25),
+(5, 'Mai2021', 'B1', 200),
+(5, 'Mai2021', 'B2', 180);
 
 -- --------------------------------------------------------
 
@@ -377,7 +414,7 @@ CREATE TABLE IF NOT EXISTS `traverse` (
   KEY `idLiaison` (`idLiaison`),
   KEY `idBateau` (`idBateau`),
   KEY `FK_idPeriode` (`idPeriode`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `traverse`
@@ -388,7 +425,10 @@ INSERT INTO `traverse` (`idTraverse`, `dateDepart`, `heureDepart`, `duree`, `idL
 (2, '2020-12-24', '16:06:00', 300, '1', '1', '2020Dec'),
 (3, '2020-11-11', '05:55:00', 650, '2', '2', '2020Nov'),
 (4, '2020-12-24', '22:18:00', 256, '3', '2', '2020Dec'),
-(6, '2021-03-22', '16:46:00', 360, '2', '1', '2021jan');
+(6, '2021-03-22', '16:46:00', 360, '2', '1', '2021jan'),
+(7, '2021-05-01', '14:46:05', 300, '4', '2', 'Mai2021'),
+(8, '2021-05-22', '10:56:11', 400, '4', '1', 'Mai2021'),
+(9, '2021-05-01', '10:56:11', 350, '5', '1', 'Mai2021');
 
 -- --------------------------------------------------------
 
@@ -455,7 +495,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `estAdmin`, `nom`, `prenom`, `email`, `mot_de_passe`, `nbPoint`) VALUES
 (1, 0, 'paul', 'dupont', 'dupont@paul.com', '81dc9bdb52d04dc20036dbd8313ed055', 50),
-(2, 1, 'admin', 'default', 'admin@default.com', '21232f297a57a5a743894a0e4a801fc3', 0),
+(2, 1, 'admin', 'default', 'admin@default.com', '21232f297a57a5a743894a0e4a801fc3', 50),
 (7, 0, 'theo ', 'blampain', 'theo@imgod.com', '4b3836aecd3e9c8caf6379ac0f74e54f', 0),
 (11, 0, 'test', 'test', 'test@test.com', '098f6bcd4621d373cade4e832627b4f6', 0),
 (13, 0, 'desreumaux', 'thomas', 'tomdsx@mail.fr', 'dba90500a23cbc4deca1e3896c203129', 0);
